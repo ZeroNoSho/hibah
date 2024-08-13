@@ -5,14 +5,14 @@ import React from "react";
 
 export default function Beranda1() {
   return (
-    <div className="flex items-center w-[1200px] py-[40px] mx-auto">
+    <div className="md:flex items-center md:w-[1200px] py-[40px] max-md:p-10 mx-auto">
       <ImageImport.BerandaUser1
         width={300}
         height={300}
-        className="w-[50%]"
+        className="md:w-[50%] max-md:mx-auto "
         alt="Image"
       ></ImageImport.BerandaUser1>
-      <div className="w-full ml-[100px]">
+      <div className="w-full md:ml-[100px] max-md:pt-10">
         <div className="flex items-center">
           <div className="flex items-center gap-2">
             <div className="border-t-4 border-[#FFD600] w-5"></div>

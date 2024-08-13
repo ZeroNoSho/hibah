@@ -6,12 +6,12 @@ import React from "react";
 
 export default function Beranda3() {
   return (
-    <div className="w-[1200px] py-[40px] mx-auto flex">
-      <div className="w-[50%] my-auto">
+    <div className="md:w-[1200px] py-[40px] mx-auto flex max-md:flex-col-reverse  ">
+      <div className="w-[50%] my-auto max-md:mx-auto max-md:mt-10">
         <ImageImport.BerandaUser3 width={300} height={300} className="w-full" />
       </div>
 
-      <div className="my-auto ml-10">
+      <div className="my-auto md:ml-10 max-md:p-10">
         <div className="flex items-center">
           <div className="flex items-center gap-2">
             <div className="border-t-4 border-[#FFD600] w-5"></div>
@@ -25,17 +25,17 @@ export default function Beranda3() {
         </Heading>
         <div>
           <Button
-            className={`bg-[#014366] text-[#FFFF] mr-5 my-3 w-[116px]  p-2 appearance-none rounded-[28px] text-[12px] font-medium `}
+            className={`bg-[#014366] border-2 border-[#014366] text-[#FFFF] md:mr-5 my-3 md:w-[116px]  p-2 appearance-none rounded-[28px] text-[12px] font-medium `}
           >
             Tingkat Insitusi
           </Button>
           <Button
-            className={`text-[#014366] border-2 border-[#014366] mr-5 my-3 w-[116px]  p-2 appearance-none rounded-[28px] text-[12px] font-medium `}
+            className={`text-[#014366] border-2 border-[#014366] md:mr-5 my-3 md:w-[116px]  p-2 appearance-none rounded-[28px] text-[12px] font-medium `}
           >
             Tingkat Fakultas
           </Button>
           <Button
-            className={`text-[#014366] border-2 border-[#014366] mr-5 my-3 w-[116px]  p-2 appearance-none rounded-[28px] text-[12px] font-medium `}
+            className={`text-[#014366] border-2 border-[#014366] md:mr-5 my-3 md:w-[116px]  p-2 appearance-none rounded-[28px] text-[12px] font-medium `}
           >
             Tingkat Prodi
           </Button>

@@ -12,6 +12,11 @@ import Proposal from "@/asset/icons/Proposal";
 import Search from "@/asset/icons/Search";
 import User from "@/asset/icons/User";
 import User2 from "@/asset/icons/user2";
+import Home from "@/asset/icons/Home";
+import ProposalNav from "@/asset/icons/ProposalNav";
+import LaporanNav from "@/asset/icons/LaporanNav";
+import UserNav from "@/asset/icons/UserNav";
+import AlurNav from "@/asset/icons/AlurNav";
 
 export const IconsImport = {
   // masukkan icon di sini
@@ -29,4 +34,9 @@ export const IconsImport = {
   Dashboard4,
   Dashboard5,
   Dropup,
+  Home,
+  ProposalNav,
+  LaporanNav,
+  UserNav,
+  AlurNav,
 };

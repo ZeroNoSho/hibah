@@ -1,7 +1,7 @@
 
 export default function Nim() {
   return (
-    <div className="my-3 ml-5 w-full">
+    <div className="my-3 md:ml-5 w-full">
       <label className="mb-3 block text-[14px] font-medium text-[#07074D]">
         NIM :
       </label>

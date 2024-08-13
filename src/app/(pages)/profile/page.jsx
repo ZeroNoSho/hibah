@@ -1,14 +1,14 @@
 "use client";
 import { useState } from "react";
-import Profile from "@/components/pages/user/profile_components/profile";
-import Proposal from "@/components/pages/user/profile_components/proposal";
+import Profile from "@/components/pages/user/(page)/profile/profile/profile";
+import Proposal from "@/components/pages/user/(page)/profile/proposal/proposal";
 
 export default function page() {
   const [pilih, setPilih] = useState(1);
   return (
-    <div className="flex p-20">
-      <div className="w-auto mr-20">
-        <div className="bg-white p-5 rounded-lg w-fit">
+    <div className="flex max-md:flex-col md:p-20 max-md:m-5">
+      <div className="w-auto max-md:w-full mr-20">
+        <div className="bg-white p-5 rounded-lg w-full md:w-fit max-md:m-auto">
           <div className="px-2  ">
             <p className="text-[16px] font-[500]">PENGATURAN</p>
             <p className="w-[210px] text-[12px] font-[400]">
@@ -45,23 +45,23 @@ export default function page() {
           </div>
         </div>
       </div>
-      {pilih === 1 ? (
-        <Profile />
-      ) : pilih === 2 ? (
-        <div className="w-full">
-          <Proposal />
-          <Proposal />
-          <Proposal />
-        </div>
-      ) : pilih === 3 ? (
-        <div className="w-full">
-          <Proposal />
-          <Proposal />
-          <Proposal />
-        </div>
-      ) : (
-        ""
-      )}
+      <div className="flex max-md:mt-5 max-md:flex-col-reverse">
+        {pilih === 1 && <Profile />}
+        {pilih === 2 && (
+          <div className="w-full">
+            <Proposal />
+            <Proposal />
+            <Proposal />
+          </div>
+        )}
+        {pilih === 3 && (
+          <div className="w-full">
+            <Proposal />
+            <Proposal />
+            <Proposal />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

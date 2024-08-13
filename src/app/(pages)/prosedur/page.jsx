@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import ProsedurTingkatInsitusi from "@/components/pages/user/(page)/prosedur/TingkatInsitusi";
+import Button from "@/components/atmos/button";
 export default function page() {
   const [pilih, setPilih] = useState(1);
   const data = {
@@ -86,8 +88,8 @@ export default function page() {
       <p className="text-center text-[24px] font-[700] my-10">
         PROSEDUR PENGAJUAN PROPOSAL
       </p>
-      <div className="w-full flex items-center justify-center my-10">
-        <button
+      <div className="w-full flex items-center justify-center my-10 max-md:auto">
+        <Button
           className={`${
             pilih === 1
               ? "bg-[#014366] text-[#FFFF]"
@@ -96,104 +98,60 @@ export default function page() {
           onClick={() => setPilih(1)}
         >
           Tingkat Insitusi
-        </button>
-        <button
+        </Button>
+        <Button
           c
           className={`${
             pilih === 2
               ? "bg-[#014366] text-[#FFFF]"
               : "text-[#014366] border border-[#014366]"
-          } mr-5 my my-3 w-[116px]  p-2 appearance-none rounded-[28px] border border-[#e0e0e0]  text-[12px] font-medium `}
+          } mr-5 my-3 w-[116px]  p-2 appearance-none rounded-[28px] border border-[#e0e0e0]  text-[12px] font-medium `}
           onClick={() => setPilih(2)}
         >
           Tingkat Fakultas
-        </button>
-        <button
+        </Button>
+        <Button
           className={`${
             pilih === 3
               ? "bg-[#014366] text-[#FFFF]"
               : "text-[#014366] border border-[#014366]"
-          } mr-5 my my-3 w-[116px]  p-2 appearance-none rounded-[28px] border border-[#e0e0e0]  text-[12px] font-medium `}
+          } md:mr-5 my-3 w-[116px] p-2 appearance-none rounded-[28px] border border-[#e0e0e0]  text-[12px] font-medium `}
           onClick={() => setPilih(3)}
         >
           Tingkat Prodi
-        </button>
+        </Button>
       </div>
-      <div className="flex items-center justify-center">
-        {pilih === 1
-          ? data.TingkatInsitusi.map((e, i) => (
-              <div key={i} className="w-[200px] ">
-                <p className="text-center text-[16px] font-[500]">
-                  STEP {i + 1}
-                </p>
-                <div className="flex items-center justify-center mt-2">
-                  <div className=" rounded-full bg-black w-3 h-3"></div>
-                  <div className="border-t-2 border-black w-full"> </div>
-                  {data.TingkatInsitusi.length - 1 === i ? (
-                    <div className="rounded-full bg-black w-3 h-3"></div>
-                  ) : (
-                    ""
-                  )}
-                </div>
-
-                <div className="w-[168px] h-[103px] my-8">
-                  <p className="text-[12px] font-[500]">{e.head}</p>
-                  <p className="text-[12px] font-[400]">{e.data}</p>
-                </div>
-                <div className="rounded-lg mb-10 pt-5 pb-5 bg-[#E0F2FE] flex items-center justify-center w-[169px] h-[120px]">
-                  <Image src={e.img} height={89} width={89} alt="Image"></Image>
-                </div>
-              </div>
-            ))
-          : pilih === 2
-          ? data.TingkatFakultas.map((e, i) => (
-              <div key={i} className="w-[200px] ">
-                <p className="text-center text-[16px] font-[500]">
-                  STEP {i + 1}
-                </p>
-                <div className="flex flex items-center justify-center mt-2">
-                  <div className=" rounded-full bg-black w-3 h-3"></div>
-                  <div className="border-t-2 border-black w-full"> </div>
-                  {data.TingkatFakultas.length - 1 === i ? (
-                    <div className="rounded-full bg-black w-3 h-3"></div>
-                  ) : (
-                    ""
-                  )}
-                </div>
-                <div className="w-[168px] h-[103px] my-8">
-                  <p className="text-[12px] font-[500]">{e.head}</p>
-                  <p className="text-[12px] font-[400]">{e.data}</p>
-                </div>
-                <div className="rounded-lg mb-10 pt-5 pb-5 bg-[#E0F2FE] flex items-center justify-center w-[169px] h-[120px]">
-                  <Image src={e.img} height={89} width={89} alt="Image"></Image>
-                </div>
-              </div>
-            ))
-          : pilih === 3
-          ? data.TingkatProdi.map((e, i) => (
-              <div key={i} className="w-[200px] ">
-                <p className="text-center text-[16px] font-[500]">
-                  STEP {i + 1}
-                </p>
-                <div className="flex flex items-center justify-center mt-2">
-                  <div className=" rounded-full bg-black w-3 h-3"></div>
-                  <div className="border-t-2 border-black w-full"> </div>
-                  {data.TingkatProdi.length - 1 === i ? (
-                    <div className="rounded-full bg-black w-3 h-3"></div>
-                  ) : (
-                    ""
-                  )}
-                </div>
-                <div className="w-[168px] h-[103px] my-8">
-                  <p className="text-[12px] font-[500]">{e.head}</p>
-                  <p className="text-[12px] font-[400]">{e.data}</p>
-                </div>
-                <div className="rounded-lg mb-10 pt-5 pb-5 bg-[#E0F2FE] flex items-center justify-center w-[169px] h-[120px]">
-                  <Image src={e.img} height={89} width={89} alt="Image"></Image>
-                </div>
-              </div>
-            ))
-          : ""}
+      <div className="max-md:block flex items-center justify-center">
+        {pilih === 1 &&
+          data.TingkatInsitusi.map((e, i) => (
+            <ProsedurTingkatInsitusi
+              e={e}
+              i={i}
+              key={i}
+              data={data}
+              status={"TingkatInsitusi"}
+            ></ProsedurTingkatInsitusi>
+          ))}
+        {pilih === 2 &&
+          data.TingkatFakultas.map((e, i) => (
+            <ProsedurTingkatInsitusi
+              e={e}
+              i={i}
+              key={i}
+              data={data}
+              status={"TingkatInsitusi"}
+            ></ProsedurTingkatInsitusi>
+          ))}
+        {pilih === 3 &&
+          data.TingkatProdi.map((e, i) => (
+            <ProsedurTingkatInsitusi
+              e={e}
+              i={i}
+              key={i}
+              data={data}
+              status={"TingkatInsitusi"}
+            ></ProsedurTingkatInsitusi>
+          ))}
       </div>
     </div>
   );

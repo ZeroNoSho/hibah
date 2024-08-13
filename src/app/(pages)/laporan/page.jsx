@@ -1,24 +1,24 @@
 import Image from "next/image";
-import InputLaporan from "@/components/pages/user/form/input";
-import TextArea from "@/components/pages/user/form/textarea";
-import Date from "@/components/pages/user/form/date";
+import InputLaporan from "@/components/pages/user/(page)/laporan/form/input";
+import TextArea from "@/components/pages/user/(page)/laporan/form/textarea";
+import Date from "@/components/pages/user/(page)/laporan/form/date";
 export default function page() {
   return (
-    <div className="mx-[300px] mb-20">
+    <div className="md:mx-[300px] mb-20">
       <div className="py-20 ">
         <h1 className="text-center text-[24px] font-semibold">
           FORM PENGISIAN LAPORAN PROPOSAL
         </h1>
       </div>
-      <div className="flex mx-20 border-dashed border-2 border-slate-500 rounded-lg">
-        <form className="w-[626px] px-10 py-10 border-dashed border-r-2 border-slate-500">
+      <div className="flex w-auto mx-5 md:mx-20 border-dashed border-2 border-slate-500 rounded-lg">
+        <form className="md:w-[626px] w-full md:p-10 p-5 border-dashed md:border-r-2 border-slate-500">
           <p className="text-[16px] font-bold">Detail Laporan</p>
 
-          <div className="border-dashed border-2 border-slate-500 rounded-lg my-3 relative">
+          <div className="border-dashed border-2 border-slate-500 rounded-lg my-3 relative  w-auto">
             <input
               type="file"
               multiple
-              className="cursor-pointer relative block opacity-0 w-[554px] h-[78px] p-2 z-50"
+              className="cursor-pointer block opacity-0 md:w-[554px] w-max h-[78px] p-2 z-50"
             />
             <div className="text-center p-10 absolute top-[-10px] right-0 left-0 m-auto">
               <p className="text-[12px] font-[500]">
@@ -61,7 +61,7 @@ export default function page() {
             </button>
           </div>
         </form>
-        <div className="w-[254px]  m-auto">
+        <div className="max-md:hidden w-[254px]  m-auto">
           <div className="border-t-2 border-[#757575] w-[29px] m-auto"></div>
           <div className="py-[50px]">
             <Image

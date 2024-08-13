@@ -2,11 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 export default function Navbar() {
   return (
-    <nav className="flex justify-between w-full bg-[#042235] text-white py-6 px-20">
+    <nav className="flex justify-between w-full bg-[#042235] text-white py-6 max-md:px-10 px-20">
       <Link href="/beranda">
-        <Image width={178.5} height={42} src="/Logo.png" alt="logo" />
+        <Image className="max-md:w-[150px]" width={178.5} height={42} src="/Logo.png" alt="logo" />
       </Link>
-      <div className="md:items-center md:w-auto flex">
+      <div className="md:items-center md:w-auto flex max-md:hidden">
         <div className="md:flex hidden">
           <Link className="block md:text-white mx-4" href="/beranda">
             BERANDA

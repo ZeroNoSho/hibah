@@ -3,10 +3,10 @@ import { useState } from "react";
 export default function Proposal() {
   const [hidden, sethidden] = useState(false);
   return (
-    <div className="W-full mb-10">
-      <div className="w-fit bg-white p-5 rounded-lg w-[600px]">
+    <div className="W-full max-md:mb-5 md:mb-10">
+      <div className="w-fit bg-white p-5 rounded-lg md:w-[600px]">
         <div className="flex">
-          <div>
+          <div className=" mr-10">
             <p className="text-[18px] font-[500]">Proposal Berkemah</p>
             <p className="text-[12px] font-[400] text-[#757575]">
               Diajukan Tanggal 24 Februari 2024
@@ -24,8 +24,8 @@ export default function Proposal() {
             </div>
           </div>
         </div>
-        <div className={`${hidden ? "hidden" : ""}`}>
-          <div className="W-full flex my-10">
+        <div className={`${hidden ? "hidden" : ""} `}>
+          <div className="W-full flex my-10 max-md:hidden">
             <div className="w-[200px]">
               <div className="flex items-center justify-center mt-2">
                 <div className="rounded-full bg-white border-8  border-[#0C4A6E] w-[22px] h-[22px]"></div>
@@ -77,11 +77,11 @@ export default function Proposal() {
               </p>
             </div>
           </div>
-          <div>
-            <button className="ml-auto bg-[#D3D6E1] h-[40px] w-[200px] text-[12px] font-[600]  appearance-none rounded-[28px] border border-[#e0e0e0]  text-[12px] font-medium text-[#7B7E8C]">
+          <div className="">
+            <button className="md:ml-auto max-md:w-full max-md:mt-2 bg-[#D3D6E1] h-[40px] w-[200px] text-[12px] font-[600]  appearance-none rounded-[28px] border border-[#e0e0e0]  text-[12px] font-medium text-[#7B7E8C]">
               Cetak Lembar Pengesahan
             </button>
-            <button className="ml-5 bg-[#D5212E] h-[40px] w-[200px] text-[12px] font-[600]  appearance-none rounded-[28px] border border-[#e0e0e0]  text-[12px] font-medium text-[#FFFF]">
+            <button className="md:ml-5 max-md:w-full max-md:mt-2 bg-[#D5212E] h-[40px] w-[200px] text-[12px] font-[600]  appearance-none rounded-[28px] border border-[#e0e0e0]  text-[12px] font-medium text-[#FFFF]">
               Lihat Revisi
             </button>
           </div>

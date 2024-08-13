@@ -36,8 +36,8 @@ export default function Beranda2() {
     },
   ];
   return (
-    <div className="w-[1200px] py-[40px] mx-auto">
-      <div className="flex items-center">
+    <div className="md:w-[1200px] py-[40px] mx-auto max-md:p-10">
+      <div className="flex items-center ">
         <div className="flex items-center gap-2">
           <div className="border-t-4 border-[#FFD600] w-5"></div>
           <Heading level={4} className={"text-sm"}>
@@ -48,9 +48,9 @@ export default function Beranda2() {
       <Heading level={1} className={"text-[24px] font-[600]"}>
         JENIS - JENIS PROPOSAL
       </Heading>
-      <div className="flex items-center justify-center py-[50px]">
+      <div className="md:flex items-center justify-center md:py-[50px]">
         {data.map((e, i) => (
-          <div className="w-[150px] h-[170px] mx-10 flex flex-col justify-center items-center text-center text-[14px]">
+          <div className="md:w-[150px] h-[170px] mx-10 flex flex-col justify-center items-center text-center text-[14px]">
             {e.svg}
             <Paragraph className="font-[600] py-2">
               {e.judul}

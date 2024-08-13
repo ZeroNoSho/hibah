@@ -2,8 +2,8 @@ import Image from "next/image";
 export default function Login() {
   return (
     <div className="bg-[url('/bglogin.png')] h-screen bg-no-repeat bg-left-bottom bg-cover flex justify-center items-center">
-      <div className="bg-[#F0F9FF] w-[1182px] h-[770px] rounded-[14px] flex">
-        <div className="m-auto">
+      <div className="bg-[#F0F9FF] md:w-[1182px] md:h-[770px] max-md:p-5 rounded-[14px] flex">
+        <div className="m-auto max-md:hidden">
           <Image width={643.5} height={650} src="/login.png" alt="Image" />
         </div>
         <div className="m-auto text-black">

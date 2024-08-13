@@ -1,7 +1,7 @@
 import Nim from "./nim";
 export default function InputLaporan({ nama, nim, placeholder }) {
   return (
-    <div className="flex flex-row w-full">
+    <div className="md:flex flex-row w-full">
       <div className="my-3 w-full">
         <label className="mb-3 block text-[14px] font-medium text-[#07074D]">
           {nama}

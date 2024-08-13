@@ -42,7 +42,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="w-[1200px] py-[40px] mx-auto text-center">
+    <div className="md:w-[1200px] py-[40px] mx-auto text-center max-md:p-5">
       <div className="flex items-center justify-center">
         <div className="flex items-center gap-2">
           <div className="border-t-4 border-[#FFD600] w-5"></div>

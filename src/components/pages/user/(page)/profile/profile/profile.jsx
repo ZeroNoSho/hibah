@@ -1,10 +1,10 @@
 import Image from "next/image";
-import InputLaporan from "@/components/pages/user/form/input";
+import InputLaporan from "@/components/pages/user/(page)/laporan/form/input";
 export default function Profile() {
   return (
     <>
-      <div className="w-full ">
-        <div className="w-[562px] bg-white p-5 rounded-lg">
+      <div className="w-full max-md:mt-5">
+        <div className="md:w-[562px] bg-white p-5 rounded-lg">
           <p className="text-[16px] font-[500]">PROFIL ORMAWA</p>
           <p className="text-[12px] font-[400]">
             Anda Dapat Mengubah Profil Ormawa Anda
@@ -36,7 +36,7 @@ export default function Profile() {
           </div>
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full md:ml-20">
         <div className="w-[330px] m-auto  bg-white p-5 rounded-lg">
           <p className="text-[16px] font-[500]">FOTO PROFIL ORMAWA</p>
           <p className="text-[12px] font-[400]">
