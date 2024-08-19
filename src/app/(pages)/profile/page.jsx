@@ -10,10 +10,9 @@ export default function page() {
   const [pilih, setPilih] = useState(1);
   const [proposal, setProposal] = useState([]);
   const [lpj, setLpj] = useState([]);
-
+  const token = Cookies.get("token");
   useEffect(() => {
     const data = async () => {
-      const token = Cookies.get("token");
       try {
         const proposal = await fetch(
           `https://admin.sipolma.id/api/proposal?token=${token}`,

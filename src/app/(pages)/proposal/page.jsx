@@ -5,7 +5,7 @@ import ProposalRincian from "@/components/pages/user/(page)/proposal/rincian";
 import ProposalUtama from "@/components/pages/user/(page)/proposal/utama";
 import Cookies from "js-cookie";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Propasal() {
   const [page, setPage] = useState(false);
@@ -13,8 +13,8 @@ export default function Propasal() {
   const [nimPendaftar, setNimPendaftar] = useState("");
   const [emailPendaftar, setEmailPendaftar] = useState("");
   const [telpPendaftar, setTelpPendaftar] = useState("");
-  const [organisasi, setOrganisasi] = useState("");
-  const [token, setToken] = useState("");
+  const organisasi = Cookies.get("nama");
+  const token = Cookies.get("token");
 
   const [judul, setJudul] = useState("");
   const [deskripsi, setDeskripsi] = useState("");
@@ -25,16 +25,6 @@ export default function Propasal() {
   const [wktSelesai, setWktSelesai] = useState("");
   const [biaya, setBiaya] = useState("");
   const [file, setFile] = useState("");
-
-  useEffect(() => {
-    function roles() {
-      const organisasi = Cookies.get("nama");
-      const token = Cookies.get("token");
-      setToken(token);
-      setOrganisasi(organisasi);
-    }
-    roles();
-  }, []);
 
   const handleSubmit = async () => {
     const formdata = new FormData();
@@ -60,6 +50,7 @@ export default function Propasal() {
       });
 
       if (response.ok) {
+        alert("berhasil");
         const result = await response.json();
         console.log("Success:", result);
       } else {

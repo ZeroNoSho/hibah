@@ -47,6 +47,7 @@ export default function page() {
         const errorData = await proposals.json();
         throw new Error(errorData.msg);
       }
+
       const data = await proposals.json();
       setProposal(data.data);
     }
@@ -82,6 +83,7 @@ export default function page() {
       });
 
       if (response.ok) {
+        alert("berhasil");
         const result = await response.json();
         console.log("Success:", result);
       } else {
