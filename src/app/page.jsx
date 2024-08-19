@@ -38,7 +38,9 @@ export default function Login() {
       }
       const data = await response.json();
       setCookie("token", data.token, 7);
+      setCookie("nama", data.data.nama, 7);
       setCookie("account_status", data.account_status, 7);
+      setCookie("id", data.data.id, 7);
 
       if (data.account_status === 2) router.push(`/beranda`);
       if (data.account_status === 1 || data.account_status === 3)

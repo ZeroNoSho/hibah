@@ -1,7 +1,7 @@
 import BodyTabel from "./body";
 import SuperBodyTabel from "./bodysuper";
 
-export default function Tabel({ data, type, page, head }) {
+export default function Tabel({ data, type, page, head, type2 }) {
   return (
     <table className="relative w-full">
       <thead className="bg-white border-b">
@@ -19,9 +19,9 @@ export default function Tabel({ data, type, page, head }) {
       </thead>
       <tbody>
         {page === "SuperAdmin" ? (
-          <SuperBodyTabel data={data} type={type} />
+          <SuperBodyTabel data={data} type={type} type2={type2} />
         ) : (
-          <BodyTabel data={data} type={type}></BodyTabel>
+          <BodyTabel data={data} type={type} type2={type2}></BodyTabel>
         )}
       </tbody>
     </table>

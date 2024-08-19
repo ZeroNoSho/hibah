@@ -1,9 +1,11 @@
 "use client";
 import Paragraph from "@/components/atmos/paragraph";
 import { IconsImport } from "@/utils/icons/IconsImport";
+import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 
 export default function page() {
+  const token = Cookies.get("token");
   const [data, setData] = useState(0);
   const [laporan, setLaporan] = useState(0);
   const [lpj, setLpj] = useState(0);
@@ -17,7 +19,7 @@ export default function page() {
           },
         });
         const response2 = await fetch(
-          "https://admin.sipolma.id/api/proposal?token=fgnXi61cca7gqTpSPjGpBhh7y2TjjN3zax2R5LSouP91TyV7RG",
+          `https://admin.sipolma.id/api/proposal?token=${token}`,
           {
             method: "GET",
             headers: {
@@ -26,7 +28,7 @@ export default function page() {
           }
         );
         const response3 = await fetch(
-          "https://admin.sipolma.id/api/lpj?token=fgnXi61cca7gqTpSPjGpBhh7y2TjjN3zax2R5LSouP91TyV7RG",
+          `https://admin.sipolma.id/api/lpj?token=${token}`,
           {
             method: "GET",
             headers: {

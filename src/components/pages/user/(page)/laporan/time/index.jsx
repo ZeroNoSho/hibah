@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Date({
+export default function Time({
   nama,
   valueMulai,
   onChangeMulai,
@@ -16,19 +16,23 @@ export default function Date({
         <input
           value={valueMulai}
           onChange={onChangeMulai}
-          type="date"
-          id="date"
-          name="date"
           className="p-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
+          type="time"
+          id="time"
+          name="time"
+          min="01:00"
+          max="23:59"
         />
 
         <input
           value={valueAkhir}
           onChange={onChangeAkhir}
-          type="date"
-          id="date"
-          name="date"
+          type="time"
           className="p-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
+          id="time"
+          name="time"
+          min="01:00"
+          max="23:59"
         />
       </div>
     </div>

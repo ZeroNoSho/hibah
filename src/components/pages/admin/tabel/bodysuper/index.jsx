@@ -4,7 +4,7 @@ import { IconsImport } from "@/utils/icons/IconsImport";
 import PopUpTabel from "./popup";
 import { useState } from "react";
 
-export default function SuperBodyTabel({ data, type }) {
+export default function SuperBodyTabel({ data, type, type2 }) {
   const [datas, setDatas] = useState("");
 
   return (
@@ -36,7 +36,9 @@ export default function SuperBodyTabel({ data, type }) {
               >
                 Aksi
                 <IconsImport.Dropdown className={"h-5 w-5 ml-5"} />
-                {datas === e?.id && <PopUpTabel type={type}></PopUpTabel>}
+                {datas === e?.id && (
+                  <PopUpTabel id={e.id} type={type} type2={type2}></PopUpTabel>
+                )}
               </Button>
             </td>
           </tr>

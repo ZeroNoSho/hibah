@@ -1,7 +1,64 @@
+"use client";
+import Button from "@/components/atmos/button";
 import Paragraph from "@/components/atmos/paragraph";
+import ProposalRincian from "@/components/pages/user/(page)/proposal/rincian";
+import ProposalUtama from "@/components/pages/user/(page)/proposal/utama";
+import Cookies from "js-cookie";
 import Image from "next/image";
-import Link from "next/link";
+import { useState } from "react";
+
 export default function Propasal() {
+  const [page, setPage] = useState(false);
+  const [namaPendaftar, setNamaPendaftar] = useState("");
+  const [nimPendaftar, setNimPendaftar] = useState("");
+  const [emailPendaftar, setEmailPendaftar] = useState("");
+  const [telpPendaftar, setTelpPendaftar] = useState("");
+  const organisasi = Cookies.get("nama");
+  const token = Cookies.get("token");
+
+  const [judul, setJudul] = useState("");
+  const [deskripsi, setDeskripsi] = useState("");
+  const [tujuan, setTujuan] = useState("");
+  const [tglMulai, setTglMulai] = useState("");
+  const [tglSelesai, setTglSelesai] = useState("");
+  const [wktMulai, setWktMulai] = useState("");
+  const [wktSelesai, setWktSelesai] = useState("");
+  const [biaya, setBiaya] = useState("");
+  const [file, setFile] = useState("");
+
+  const handleSubmit = async () => {
+    const formdata = new FormData();
+    formdata.append("token", token);
+    formdata.append("nama_pengaju", namaPendaftar);
+    formdata.append("nim_pengaju", nimPendaftar);
+    formdata.append("email_pengaju", emailPendaftar);
+    formdata.append("telp_pengaju", telpPendaftar);
+    formdata.append("judul", judul);
+    formdata.append("deskripsi", deskripsi);
+    formdata.append("tujuan", tujuan);
+    formdata.append("tgl_mulai", tglMulai);
+    formdata.append("tgl_selesai", tglSelesai);
+    formdata.append("wkt_mulai", wktMulai);
+    formdata.append("wkt_selesai", wktSelesai);
+    formdata.append("biaya", biaya);
+    formdata.append("file", file[0]);
+
+    try {
+      const response = await fetch("https://admin.sipolma.id/api/proposal", {
+        method: "POST",
+        body: formdata,
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Success:", result);
+      } else {
+        console.error("Error:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
   return (
     <div className="md:mx-[300px] mb-20">
       <div className="py-20 ">
@@ -11,82 +68,64 @@ export default function Propasal() {
       </div>
       <div className="md:flex mx-5 md:mx-20 flex-row border-dashed border-2 border-slate-500 rounded-lg">
         <form className="w-full basis-4/6 px-10 py-10 border-dashed  md:border-r-2 border-slate-500">
-          <Paragraph className="text-[16px] font-bold">
-            Informasi Umum
-          </Paragraph>
-          <div className="md:flex flex-row w-full">
-            <div className="my-3 w-full">
-              <label className="mb-3 block text-[14px] font-medium text-[#07074D]">
-                Nama Lengkap Pengaju :
-              </label>
-
-              <input
-                type="text"
-                className="text-[12px] w-full h-[29px] appearance-none rounded-[3px] border border-[#e0e0e0] bg-white px-3  font-medium text-[#6B7280]"
-              />
-            </div>
-            <div className="my-3 md:ml-5 w-full">
-              <label className="mb-3 block text-[14px] font-medium text-[#07074D]">
-                NIM :
-              </label>
-
-              <input
-                type="text"
-                className="text-[12px] w-full h-[29px] appearance-none rounded-[3px] border border-[#e0e0e0] bg-white px-3  font-medium text-[#6B7280]"
-              />
-            </div>
-          </div>
-          <div className="md:flex flex-row w-full">
-            <div className="my-3 w-full">
-              <label className="mb-3 block text-[14px] font-medium text-[#07074D]">
-                E-mail :
-              </label>
-
-              <input
-                type="text"
-                className="text-[12px] w-full h-[29px] appearance-none rounded-[3px] border border-[#e0e0e0] bg-white px-3  font-medium text-[#6B7280]"
-              />
-            </div>
-            <div className="my-3 md:ml-5 w-full">
-              <label className="mb-3 block text-[14px] font-medium text-[#07074D]">
-                No. Telepon :
-              </label>
-
-              <input
-                type="text"
-                className="text-[12px] w-full h-[29px] appearance-none rounded-[3px] border border-[#e0e0e0] bg-white px-3  font-medium text-[#6B7280]"
-              />
-            </div>
-          </div>
-          <div>
-            <div className="my-3">
-              <label className="mb-3 block text-[14px] font-medium text-[#07074D]">
-                Nama Organisasi Mahasiswa :
-              </label>
-
-              <input
-                type="text"
-                className="text-[12px] w-full h-[29px] appearance-none rounded-[3px] border border-[#e0e0e0] bg-white px-3  font-medium text-[#6B7280]"
-              />
-            </div>
-            <div className="my-3">
-              <label className="mb-3 block text-[14px] font-medium text-[#07074D]">
-                Jurusan / Program Studi :
-              </label>
-
-              <input
-                type="text"
-                className="text-[12px] w-full h-[29px] appearance-none rounded-[3px] border border-[#e0e0e0] bg-white px-3  font-medium text-[#6B7280]"
-              />
-            </div>
-          </div>
+          {page ? (
+            <ProposalRincian
+              judul={judul}
+              setJudul={setJudul}
+              deskripsi={deskripsi}
+              setDeskripsi={setDeskripsi}
+              tujuan={tujuan}
+              setTujuan={setTujuan}
+              tglMulai={tglMulai}
+              setTglMulai={setTglMulai}
+              tglSelesai={tglSelesai}
+              setTglSelesai={setTglSelesai}
+              wktMulai={wktMulai}
+              setWktMulai={setWktMulai}
+              wktSelesai={wktSelesai}
+              setWktSelesai={setWktSelesai}
+              biaya={biaya}
+              setBiaya={setBiaya}
+              file={file}
+              setFile={setFile}
+            ></ProposalRincian>
+          ) : (
+            <ProposalUtama
+              setNamaPendaftar={setNamaPendaftar}
+              namaPendaftar={namaPendaftar}
+              nimPendaftar={nimPendaftar}
+              setNimPendaftar={setNimPendaftar}
+              emailPendaftar={emailPendaftar}
+              setEmailPendaftar={setEmailPendaftar}
+              organisasi={organisasi}
+              telpPendaftar={telpPendaftar}
+              setTelpPendaftar={setTelpPendaftar}
+            ></ProposalUtama>
+          )}
           <div className="w-full text-right mt-10">
-            <Link
-              href={"/proposal/rincian"}
-              className="my-3 p-3 bg-[#014366] w-[111px] p-2 appearance-none rounded-[28px] border border-[#e0e0e0]  text-[12px] font-medium text-[#FFFF]"
-            >
-              Selanjutnya
-            </Link>
+            {page ? (
+              <>
+                <Button
+                  onClick={() => setPage(false)}
+                  className="my-3 w-[111px] bg-[#B2B2B2] p-2 appearance-none rounded-[28px] border border-[#e0e0e0]  text-[12px] font-medium text-[#FFFF]"
+                >
+                  Sebelumnya
+                </Button>
+                <Button
+                  onClick={() => handleSubmit()}
+                  className="my-3 w-[111px] bg-[#014366] p-2 appearance-none rounded-[28px] border border-[#e0e0e0]  text-[12px] font-medium text-[#FFFF]"
+                >
+                  Kirim
+                </Button>
+              </>
+            ) : (
+              <Button
+                onClick={() => setPage(true)}
+                className="my-3 w-[111px] bg-[#014366] p-2 appearance-none rounded-[28px] border border-[#e0e0e0]  text-[12px] font-medium text-[#FFFF]"
+              >
+                Selanjutnya
+              </Button>
+            )}
           </div>
         </form>
         <div className="w-full basis-1/6 m-auto border-dashed max-md:border-t-2 border-slate-500">

@@ -2,8 +2,10 @@
 import FootLaporan from "@/components/pages/admin/foot";
 import HeadInput from "@/components/pages/admin/head";
 import Tabel from "@/components/pages/admin/tabel";
+import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 export default function page() {
+  const token = Cookies.get("token");
   const [head, setHead] = useState([
     "No",
     "Tanggal",
@@ -19,7 +21,7 @@ export default function page() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://admin.sipolma.id/api/lpj?token=fgnXi61cca7gqTpSPjGpBhh7y2TjjN3zax2R5LSouP91TyV7RG",
+          `https://admin.sipolma.id/api/lpj?token=${token}`,
           {
             method: "GET",
             headers: {
@@ -45,7 +47,12 @@ export default function page() {
       <HeadInput></HeadInput>
       <div className="m-5 bg-white my-4 dark:bg-neutral-900 ring-1 ring-neutral-600 ring-opacity-5 dark:ring-opacity-50 dark:ring-neutral-700 rounded-lg shadow overflow-x-auto text">
         <div className="max-h-[10000px] w-full">
-          <Tabel data={data} type={"Laporan"} head={head}></Tabel>
+          <Tabel
+            data={data}
+            type={"Laporan"}
+            head={head}
+            type2={"laporan"}
+          ></Tabel>
         </div>
       </div>
       <FootLaporan></FootLaporan>
