@@ -1,9 +1,15 @@
+"use client";
+import Cookies from "js-cookie";
 import Links from "@/components/atmos/link";
 import Paragraph from "@/components/atmos/paragraph";
+import { Contex } from "@/context/store";
 import { IconsImport } from "@/utils/icons/IconsImport";
+import { useContext } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function NavbarAdmin() {
+  const role = Cookies.get("account_status");
   return (
     <div className="max-md:fixed max-md:z-[1300] max-md:w-screen max-md:bg-neutral-600 max-md:bg-opacity-75">
       <div className="flex h-dvh">
@@ -53,28 +59,26 @@ export default function NavbarAdmin() {
               >
                 Laporan
               </Paragraph>
-            </Links>{" "}
-            <Links href="/admin/pengguna" className="w-full my-5">
-              <IconsImport.User2 className="mx-auto mb-5 text-white"></IconsImport.User2>
-              <Paragraph
-                className="text-center text-sm"
-                light="text-neutral-100"
-              >
-                Pengguna
-              </Paragraph>
-            </Links>{" "}
-            <Links href="/admin/ormawa" className="w-full my-5">
-              <IconsImport.User
-                className="mx-auto mb-5"
-                color="white"
-              ></IconsImport.User>
-              <Paragraph
-                className="text-center text-sm"
-                light="text-neutral-100"
-              >
-                Ormawa
-              </Paragraph>
             </Links>
+            <div className={role ? "hidden my-5" : "my-5"}>
+              <Link href="/admin/pengguna" className={`w-full`}>
+                <IconsImport.User2 className="mx-auto mb-5 text-white"></IconsImport.User2>
+                <Paragraph light={"text-white"} className="text-center text-sm">
+                  Pengguna
+                </Paragraph>
+              </Link>
+            </div>
+            <div className={role ? "hidden my-5" : "my-5"}>
+              <Link href="/admin/ormawa" className="w-full">
+                <IconsImport.User
+                  className="mx-auto"
+                  color="white"
+                ></IconsImport.User>
+                <Paragraph light={"text-white"} className="text-center text-sm">
+                  Ormawa
+                </Paragraph>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

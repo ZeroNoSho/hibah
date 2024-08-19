@@ -50,7 +50,10 @@ export default function Beranda2() {
       </Heading>
       <div className="md:flex items-center justify-center md:py-[50px]">
         {data.map((e, i) => (
-          <div className="md:w-[150px] h-[170px] mx-10 flex flex-col justify-center items-center text-center text-[14px]">
+          <div
+            key={i}
+            className="md:w-[150px] h-[170px] mx-10 flex flex-col justify-center items-center text-center text-[14px]"
+          >
             {e.svg}
             <Paragraph className="font-[600] py-2">
               {e.judul}

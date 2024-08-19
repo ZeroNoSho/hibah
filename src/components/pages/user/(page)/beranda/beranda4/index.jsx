@@ -1,4 +1,5 @@
 "use client";
+import Button from "@/components/atmos/button";
 import Heading from "@/components/atmos/heading";
 import { IconsImport } from "@/utils/icons/IconsImport";
 import React, { useState } from "react";
@@ -56,11 +57,13 @@ const Faq = () => {
       </Heading>
       {faqData.map((item, index) => (
         <div key={index} className="border rounded-md bg-transparent my-5 py-3">
-          <button
+          <Button
             className="w-full px-4 py-2 text-left flex"
             onClick={() => toggleAnswer(index)}
           >
-            <h3 className=" font-semibold">{item.question}</h3>
+            <Heading level={3} className=" font-semibold">
+              {item.question}
+            </Heading>
 
             {openIndex === index ? (
               <IconsImport.Dropup
@@ -71,7 +74,7 @@ const Faq = () => {
                 className={"h-5 w-5 ml-auto"}
               ></IconsImport.Dropdown>
             )}
-          </button>
+          </Button>
           {openIndex === index && (
             <div className="px-4 py-2 bg-gray-50 text-left">
               <p>{item.answer}</p>

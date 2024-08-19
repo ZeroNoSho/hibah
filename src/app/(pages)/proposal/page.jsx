@@ -1,3 +1,4 @@
+import Paragraph from "@/components/atmos/paragraph";
 import Image from "next/image";
 import Link from "next/link";
 export default function Propasal() {
@@ -10,7 +11,9 @@ export default function Propasal() {
       </div>
       <div className="md:flex mx-5 md:mx-20 flex-row border-dashed border-2 border-slate-500 rounded-lg">
         <form className="w-full basis-4/6 px-10 py-10 border-dashed  md:border-r-2 border-slate-500">
-          <p className="text-[16px] font-bold">Informasi Umum</p>
+          <Paragraph className="text-[16px] font-bold">
+            Informasi Umum
+          </Paragraph>
           <div className="md:flex flex-row w-full">
             <div className="my-3 w-full">
               <label className="mb-3 block text-[14px] font-medium text-[#07074D]">
@@ -104,14 +107,18 @@ export default function Propasal() {
               src="/proposalvector.png"
               alt="Image"
             />
-            <p className="text-center my-3 text-[12px]">Informasi Umum</p>
-            <p className="text-center text-[12px]">
+            <Paragraph className="text-center my-3 text-[12px]">
+              Informasi Umum
+            </Paragraph>
+            <Paragraph className="text-center text-[12px]">
               Isi data dengan teliti dan benar. Setelah di input, data tidak
               dapat diubah.
-            </p>
+            </Paragraph>
           </div>
           <div className="border-t-2 border-[#757575] w-[29px] m-auto"></div>
-          <p className="text-center text-[12px] py-10">Butuh Bantuan?</p>
+          <Paragraph className="text-center text-[12px] py-10">
+            Butuh Bantuan?
+          </Paragraph>
         </div>
       </div>
     </div>

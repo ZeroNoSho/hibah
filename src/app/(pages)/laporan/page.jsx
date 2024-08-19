@@ -1,7 +1,9 @@
 import Image from "next/image";
-import InputLaporan from "@/components/pages/user/(page)/laporan/form/input";
-import TextArea from "@/components/pages/user/(page)/laporan/form/textarea";
-import Date from "@/components/pages/user/(page)/laporan/form/date";
+import InputLaporan from "@/components/pages/user/(page)/laporan/input";
+import TextArea from "@/components/pages/user/(page)/laporan/textarea";
+import Date from "@/components/pages/user/(page)/laporan/date";
+import Paragraph from "@/components/atmos/paragraph";
+import Input from "@/components/atmos/input";
 export default function page() {
   return (
     <div className="md:mx-[300px] mb-20">
@@ -12,19 +14,21 @@ export default function page() {
       </div>
       <div className="flex w-auto mx-5 md:mx-20 border-dashed border-2 border-slate-500 rounded-lg">
         <form className="md:w-[626px] w-full md:p-10 p-5 border-dashed md:border-r-2 border-slate-500">
-          <p className="text-[16px] font-bold">Detail Laporan</p>
+          <Paragraph className="text-[16px] font-bold">
+            Detail Laporan
+          </Paragraph>
 
-          <div className="border-dashed border-2 border-slate-500 rounded-lg my-3 relative  w-auto">
-            <input
+          <div className="border-dashed border-2 border-slate-500 rounded-lg my-3 relative">
+            <Input
               type="file"
               multiple
-              className="cursor-pointer block opacity-0 md:w-[554px] w-max h-[78px] p-2 z-50"
+              className="cursor-pointer relative block opacity-0 md:w-[554px] h-[78px] p-2 z-50"
             />
             <div className="text-center p-10 absolute top-[-10px] right-0 left-0 m-auto">
-              <p className="text-[12px] font-[500]">
+              <Paragraph className="text-[12px] font-[500]">
                 <span className="text-[#0284C7]"> UPLOAD LAPORAN</span> ATAU
                 PINDAHKAN FILENYA KESINI
-              </p>
+              </Paragraph>
             </div>
           </div>
           <InputLaporan nama={"Nama Ketua Pelaksana :"} nim={true} />
@@ -48,12 +52,12 @@ export default function page() {
               />
             </div>
 
-            <p className="text-[12px] font-[400]">
+            <Paragraph className="text-[12px] font-[400]">
               Dengan mengisi formulir ini, saya menyatakan bahwa saya telah
               membaca dan memahami persyaratan serta prosedur pelaporan
               proposal. Saya juga bersedia untuk memberikan informasi tambahan
               jika diperlukan
-            </p>
+            </Paragraph>
           </div>
           <div className="w-full text-right">
             <button className="my-3 w-[111px] bg-[#014366] p-2 appearance-none rounded-[28px] border border-[#e0e0e0]  text-[12px] font-medium text-[#FFFF]">
@@ -71,14 +75,18 @@ export default function page() {
               src="/proposalvector.png"
               alt="Image"
             />
-            <p className="text-center my-3 text-[12px]">Informasi Umum</p>
-            <p className="text-center text-[12px]">
+            <Paragraph className="text-center my-3 text-[12px]">
+              Informasi Umum
+            </Paragraph>
+            <Paragraph className="text-center text-[12px]">
               Isi data dengan teliti dan benar. Setelah di input, data tidak
               dapat diubah.
-            </p>
+            </Paragraph>
           </div>
           <div className="border-t-2 border-[#757575] w-[29px] m-auto"></div>
-          <p className="text-center text-[12px] py-10">Butuh Bantuan?</p>
+          <Paragraph className="text-center text-[12px] py-10">
+            Butuh Bantuan?
+          </Paragraph>
         </div>
       </div>
     </div>

@@ -46,7 +46,9 @@ export default function Beranda3() {
               1
             </div>
             <div>
-              <h1 className="text-lg font-semibold">Kemahasiswaan ITTP</h1>
+              <Heading level={1} className="text-lg font-semibold">
+                Kemahasiswaan ITTP
+              </Heading>
               <Paragraph>
                 Mengajukan permohonan pengesahan proposal ke Kemahasiswaan ITTP.
               </Paragraph>

@@ -14,8 +14,7 @@ export default function page() {
       <div className="bg-white">
         <Beranda1></Beranda1>
         <Beranda2></Beranda2>
-        <Beranda3></Beranda3>
-       
+        <Beranda3></Beranda3>  
         <Faq></Faq>
       </div>
     </div>

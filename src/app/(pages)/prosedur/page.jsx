@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import ProsedurTingkatInsitusi from "@/components/pages/user/(page)/prosedur/TingkatInsitusi";
 import Button from "@/components/atmos/button";
+import Paragraph from "@/components/atmos/paragraph";
 export default function page() {
   const [pilih, setPilih] = useState(1);
   const data = {
@@ -85,9 +86,9 @@ export default function page() {
   };
   return (
     <div>
-      <p className="text-center text-[24px] font-[700] my-10">
+      <Paragraph className="text-center text-[24px] font-[700] my-10">
         PROSEDUR PENGAJUAN PROPOSAL
-      </p>
+      </Paragraph>
       <div className="w-full flex items-center justify-center my-10 max-md:auto">
         <Button
           className={`${

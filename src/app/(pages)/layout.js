@@ -3,7 +3,7 @@ import Navbar from "@/components/pages/user/nav";
 import NavMobile from "@/components/pages/user/navmobile";
 export default function DashboardLayout({ children }) {
   return (
-    <div>
+    <div className="bg-white">
       <Navbar></Navbar>
       {children}
       <Footers></Footers>

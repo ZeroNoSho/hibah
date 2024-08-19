@@ -1,3 +1,5 @@
+
+import Paragraph from "@/components/atmos/paragraph";
 import InputAdmin from "@/components/pages/admin/head/Input";
 import { IconsImport } from "@/utils/icons/IconsImport";
 
@@ -6,11 +8,11 @@ export default function HeadInput() {
     <div className="m-5">
       <div className="flex">
         <div className="w-full">
-          <p className="mb-2">Status</p>
+          <Paragraph className="mb-2">Status</Paragraph>
           <InputAdmin placeholder={"Semua"}></InputAdmin>
         </div>
         <div className="w-full">
-          <p className="mb-2">Tanggal</p>
+          <Paragraph className="mb-2">Tanggal</Paragraph>
           <InputAdmin
             placeholder={"Select date"}
             svg={
@@ -20,7 +22,7 @@ export default function HeadInput() {
         </div>
 
         <div className="w-full">
-          <p className="mb-2">Cari</p>
+          <Paragraph className="mb-2">Cari</Paragraph>
           <InputAdmin
             placeholder={"Cari.."}
             svg={

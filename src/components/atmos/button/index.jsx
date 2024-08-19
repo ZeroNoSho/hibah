@@ -2,9 +2,9 @@ const Button = ({ children, onClick, className, type, disabled }) => {
   return (
     <button
       type={type || "button"}
-      className={`${className}`}
+      className={className}
       onClick={onClick}
-      disabled={disabled}
+      disabled={disabled || false}
     >
       {children}
     </button>
