@@ -37,7 +37,6 @@ export default function Login() {
         throw new Error(errorData.msg);
       }
       const data = await response.json();
-      console.log(data);
       setCookie("token", data.token, 7);
       setCookie("account_status", data.account_status, 7);
 
