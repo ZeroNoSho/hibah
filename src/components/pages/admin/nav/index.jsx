@@ -2,9 +2,9 @@
 import Cookies from "js-cookie";
 import Links from "@/components/atmos/link";
 import Paragraph from "@/components/atmos/paragraph";
-import { Contex } from "@/context/store";
+
 import { IconsImport } from "@/utils/icons/IconsImport";
-import { useContext } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -60,7 +60,7 @@ export default function NavbarAdmin() {
                 Laporan
               </Paragraph>
             </Links>
-            <div className={role ? "hidden my-5" : "my-5"}>
+            <div className={role !== "1" ? "hidden my-5" : "my-5"}>
               <Link href="/admin/pengguna" className={`w-full`}>
                 <IconsImport.User2 className="mx-auto mb-5 text-white"></IconsImport.User2>
                 <Paragraph light={"text-white"} className="text-center text-sm">
@@ -68,7 +68,7 @@ export default function NavbarAdmin() {
                 </Paragraph>
               </Link>
             </div>
-            <div className={role ? "hidden my-5" : "my-5"}>
+            <div className={role !== "1" ? "hidden my-5" : "my-5"}>
               <Link href="/admin/ormawa" className="w-full">
                 <IconsImport.User
                   className="mx-auto"
