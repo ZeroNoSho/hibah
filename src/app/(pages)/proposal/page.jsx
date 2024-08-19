@@ -5,7 +5,7 @@ import ProposalRincian from "@/components/pages/user/(page)/proposal/rincian";
 import ProposalUtama from "@/components/pages/user/(page)/proposal/utama";
 import Cookies from "js-cookie";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Propasal() {
   const [page, setPage] = useState(false);
