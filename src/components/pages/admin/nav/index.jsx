@@ -25,9 +25,9 @@ export default function NavbarAdmin() {
     document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
   }
   return (
-    <div className="max-md:fixed max-md:z-[1300] max-md:bg-neutral-600 max-md:bg-opacity-75">
+    <div className="  max-md:fixed max-md:z-[1300] max-md:bg-neutral-600 max-md:bg-opacity-75">
       <div className="flex">
-        <div className="min-h-auto bg-neutral-800 dark:bg-neutral-900 md:flex md:shrink-0 w-[94px]">
+        <div className="min-h-screen bg-neutral-800 dark:bg-neutral-900 md:flex md:shrink-0 w-[94px]">
           <div className="flex grow flex-col overflow-y-auto pb-4 pt-5 ">
             <Links
               href="/admin/beranda"
