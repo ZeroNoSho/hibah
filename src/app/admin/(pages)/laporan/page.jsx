@@ -6,6 +6,7 @@ import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 export default function page() {
   const token = Cookies.get("token");
+  
   const [head, setHead] = useState([
     "No",
     "Tanggal",
@@ -29,9 +30,7 @@ export default function page() {
             },
           }
         );
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+
         const data = await response.json();
         setData(data.data);
       } catch (error) {
@@ -41,12 +40,11 @@ export default function page() {
 
     fetchData();
   }, []);
-
   return (
     <>
       <HeadInput></HeadInput>
       <div className="m-5 bg-white my-4 dark:bg-neutral-900 ring-1 ring-neutral-600 ring-opacity-5 dark:ring-opacity-50 dark:ring-neutral-700 rounded-lg shadow overflow-y-scroll">
-        <div className="max-h-2 overflow-y-auto">
+        <div className="max-h-[500px]">
           <Tabel
             data={data}
             type={"Laporan"}

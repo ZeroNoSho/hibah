@@ -33,7 +33,7 @@ export default function BodyTabel({ data, type, type2 }) {
             {e.tingkat}
           </td>
           <td className="px-6 py-4 text-[#0284C7] whitespace-nowrap text-sm font-medium ">
-            Download {e.admin_2 === id}
+            Download 
           </td>
           <td className="px-6 py-4 text-sm flex relative">
             <Button

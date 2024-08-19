@@ -35,7 +35,7 @@ export default function page() {
   useEffect(() => {
     async function propsal(params) {
       const proposals = await fetch(
-        `https://admin.sipolma.id/api/proposal?token=${token}`,
+        `https://admin.sipolma.id/api/lpj?token=${token}`,
         {
           method: "GET",
           headers: {
