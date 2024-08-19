@@ -13,9 +13,10 @@ export default function page() {
 
   useEffect(() => {
     const data = async () => {
+      const token = Cookies.get("token");
       try {
         const proposal = await fetch(
-          "https://admin.sipolma.id/api/proposal?token=ptBdvQ0aOIediql9CRjwd71DNDhbSZdNmi5LfR5D64qqRhy1y9",
+          `https://admin.sipolma.id/api/proposal?token=${token}`,
           {
             method: "GET",
             headers: {
@@ -24,7 +25,7 @@ export default function page() {
           }
         );
         const LPJ = await fetch(
-          "https://admin.sipolma.id/api/lpj?token=ptBdvQ0aOIediql9CRjwd71DNDhbSZdNmi5LfR5D64qqRhy1y9",
+          `https://admin.sipolma.id/api/lpj?token=${token}`,
           {
             method: "GET",
             headers: {

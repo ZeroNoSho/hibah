@@ -3,7 +3,7 @@ import SuperBodyTabel from "./bodysuper";
 
 export default function Tabel({ data, type, page, head, type2 }) {
   return (
-    <table className="relative w-full">
+    <table className="relative w-full h-[50%]">
       <thead className="bg-white border-b">
         <tr>
           {head.map((e, i) => (

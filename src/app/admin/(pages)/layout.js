@@ -4,7 +4,7 @@ export default function DashboardLayout({ children }) {
   return (
     <div className="flex">
       <NavbarAdmin></NavbarAdmin>
-      <div className="w-full">{children}</div>
+      <div className="w-full h-full">{children}</div>
     </div>
   );
 }

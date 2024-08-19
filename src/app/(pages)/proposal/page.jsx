@@ -13,8 +13,8 @@ export default function Propasal() {
   const [nimPendaftar, setNimPendaftar] = useState("");
   const [emailPendaftar, setEmailPendaftar] = useState("");
   const [telpPendaftar, setTelpPendaftar] = useState("");
-  const organisasi = Cookies.get("nama");
-  const token = Cookies.get("token");
+  const [organisasi, setOrganisasi] = useState("");
+  const [token, setToken] = useState("");
 
   const [judul, setJudul] = useState("");
   const [deskripsi, setDeskripsi] = useState("");
@@ -25,6 +25,16 @@ export default function Propasal() {
   const [wktSelesai, setWktSelesai] = useState("");
   const [biaya, setBiaya] = useState("");
   const [file, setFile] = useState("");
+
+  useEffect(() => {
+    function roles() {
+      const organisasi = Cookies.get("nama");
+      const token = Cookies.get("token");
+      setToken(token);
+      setOrganisasi(organisasi);
+    }
+    roles();
+  }, []);
 
   const handleSubmit = async () => {
     const formdata = new FormData();

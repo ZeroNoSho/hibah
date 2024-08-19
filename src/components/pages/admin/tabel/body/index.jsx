@@ -16,7 +16,7 @@ export default function BodyTabel({ data, type, type2 }) {
   return (
     <>
       {data?.map((e, i) => (
-        <tr key={i} className="bg-gray-100 border-b">
+        <tr key={i} className="bg-gray-100 border-b ">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
             {e.id}
           </td>
@@ -41,15 +41,21 @@ export default function BodyTabel({ data, type, type2 }) {
                 admin_1
                   ? e?.acc_1 == 1
                     ? true
-                    : false
+                    : e?.acc_1 == 2
+                    ? true
+                    : ""
                   : admin_2
                   ? e?.acc_2 == 1
                     ? true
-                    : false
+                    : e?.acc_2 == 2
+                    ? true
+                    : ""
                   : admin_3
                   ? e?.acc_3 == 1
                     ? true
-                    : false
+                    : e?.acc_3 == 2
+                    ? true
+                    : ""
                   : ""
               }
               onClick={() => (datas === e?.id ? setDatas("") : setDatas(e.id))}

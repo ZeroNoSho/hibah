@@ -45,8 +45,8 @@ export default function page() {
   return (
     <>
       <HeadInput></HeadInput>
-      <div className="m-5 bg-white my-4 dark:bg-neutral-900 ring-1 ring-neutral-600 ring-opacity-5 dark:ring-opacity-50 dark:ring-neutral-700 rounded-lg shadow overflow-x-auto text">
-        <div className="max-h-[10000px] w-full">
+      <div className="m-5 bg-white my-4 dark:bg-neutral-900 ring-1 ring-neutral-600 ring-opacity-5 dark:ring-opacity-50 dark:ring-neutral-700 rounded-lg shadow overflow-y-scroll">
+        <div className="max-h-2 overflow-y-auto">
           <Tabel
             data={data}
             type={"Laporan"}
