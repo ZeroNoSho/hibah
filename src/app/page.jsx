@@ -19,7 +19,7 @@ export default function Login() {
     }
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
   }
-  
+
   const auth = async () => {
     try {
       const response = await fetch("http://admin.sipolma.id/api/login", {
@@ -37,6 +37,7 @@ export default function Login() {
         throw new Error(errorData.msg);
       }
       const data = await response.json();
+      console.log(data);
       setCookie("token", data.token, 7);
       setCookie("account_status", data.account_status, 7);
 
